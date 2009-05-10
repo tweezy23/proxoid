@@ -1,0 +1,29 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Proxoid is a http ProxyServer on Android.
+It allow users of not rooted phones to use their phone's internet access from a computer.
+
+
+= How it work =
+
+It is based on a possibility offered by Google's sdk : it is possible to forward requests from your computer to your phone. In this case, they will be forwarded to Proxoid who will transmit them to Internet and give you the answer.
+
+= Why not thetering ? =
+
+Thetering on Android is wonderful but, it needs to be root on the phone wich is rarely the case.
+Also, by using a proxy it will be possible to filter request and replies (change headers, add caching, remove adds, ...).
+
+= Installation =
+
+==Step 1 : all you will need==
+
+  # You will need, of course, Proxoid downloaded from market and working on your phone.
+  # You will need an usb cable to connect your phone to your computer.
+  # You will also need a tool contained in Google's sdk : adb. 
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
