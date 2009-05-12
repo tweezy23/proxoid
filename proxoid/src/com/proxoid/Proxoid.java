@@ -1,13 +1,16 @@
 package com.proxoid;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.mba.proxylight.ProxyLight;
 import com.mba.proxylight.Request;
@@ -158,5 +161,30 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 				Log.e(TAG, "", e);
 			}
 		}
+	}
+	
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+	
+	
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		if (item.getItemId()==R.id.menu_help) {
+			AlertDialog d = new AlertDialog.Builder(this).create();
+			d.setTitle(null);
+			d.setMessage("Please, go to\nhttp://code.google.com/p/proxoid/\nfrom your computer.");
+			d.setButton("Ok", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+				}
+			});
+			d.show();			
+			
+		}
+		return super.onMenuItemSelected(featureId, item);
 	}
 }
