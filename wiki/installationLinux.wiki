@@ -1,0 +1,31 @@
+
+I'l try to descirbe how to do better later, but, for now, here is a brief howto :
+
+== Step 1 : Configure udev to recognize your phone ==
+
+On my computer, I have in /etc/udev/rules.da file named 11-android.rules that contains
+
+SUBSYSTEMS=="usb", SYSFS{idVendor}=="0bb4", SYSFS{idProduct}=="0c02", MODE="0666", OWNER="mike"
+SUBSYSTEMS=="usb", SYSFS{idVendor}=="0bb4", SYSFS{idProduct}=="0c01", MODE="0666", OWNER="mike"
+
+As you can see, I have two entries in this files for only one phone.
+This is because once, when I tried to use fastboot, it seems that the idProduct changed.
+
+
+== Step 2 : SDK ==
+
+Download and extract sdk from 
+
+== Step 3 : Tunneling ==
+
+Now, we can start tunneling betwwen your computer and your phone.
+cd to the extracted sdk dir.
+go to tools subdirectory.
+run
+./adb forward tcp:8080 tcp:8080
+
+== Step 3 : configure your browser ==
+
+Your browser must use localhost:8080
+
+Finally, run Proxoid, touch "Start" and start browsing ... 
