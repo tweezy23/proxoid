@@ -15,13 +15,4 @@ Also, by using a proxy it will be possible to filter request and replies (change
 
 = Installation =
 
-==Step 1 : all you will need==
-
-  # You will need, of course, Proxoid downloaded from market and working on your phone.
-  # You will need an usb cable to connect your phone to your computer.
-  # You will also need a tool contained in Google's sdk : adb. 
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+See [installation this page]
