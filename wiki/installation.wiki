@@ -1,0 +1,8 @@
+= Installation =
+
+
+To install on your phone, no problem : just install from Android Market.
+
+But to use it, your phone must be connected to your computer via usb and your computer must be correctly configured. 
+
+Configuration of your computer is detailed for [installationWindows Windows] and [installationLinux Linux] (Sorry, I have no MacOS ...)
