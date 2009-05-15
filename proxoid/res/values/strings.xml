@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Proxoid</string>
+    <string name="app_name">Proxoid</string>
+    <string-array name="useragent_keys">
+                <item>asis</item>
+                <item>replace</item>
+                <item>remove</item>
+    </string-array>
+	<string-array name="useragent_values">
+                <item>Don't change</item>
+                <item>Replace with dummy</item>
+                <item>Remove</item>
+     </string-array>     
+    <string-array name="proxy_keys">
+                <item>none</item>
+                <item>apn</item>
+    </string-array>
+	<string-array name="proxy_values">
+                <item>None</item>
+                <item>Use APN settings</item>
+     </string-array> 
+</resources>
