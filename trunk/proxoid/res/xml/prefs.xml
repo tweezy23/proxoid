@@ -22,7 +22,7 @@
 		android:title="User-Agent filter"
 		android:entries="@array/useragent_values"
 		android:entryValues="@array/useragent_keys"
-	/>
+	android:defaultValue="replace"/>
 	<!--   ListPreference 
 		android:key="proxy" 
 		android:order="4" 
