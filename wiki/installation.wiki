@@ -1,6 +1,6 @@
 = Installation =
 
-First, you must install on configure your phone.
+First, you *must* install on configure your phone.
 See here : [installationPhone Install and configure your phone]
 
 Then, you have things to do on your computer.
