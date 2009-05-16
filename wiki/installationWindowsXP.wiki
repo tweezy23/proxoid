@@ -2,62 +2,96 @@
 
 = Installation on Windows XP =
 
+Important: Be sure to have correctly configure your phone before<br>
+See [installationPhone this page] if not.
+
 == Overview ==
 
-Your computer have to be able to cummunicate with your phone.<br/>
-For this, there is a tool provided with Android SDK : adb.<br/>
-So we'll have to download this tool, install it's driver and start it.<br>
-(Steps 1 ~ 5)
+The steps will be :
+ # Download drivers
+ # Extract drivers
+ # Install drivers
+ # Configure browser
+ # Start tunnel
+ # Start proxoid
+ # Start browsing
 
-Then we'll have to tell your browser to use it.<br/>
-(Steps 6 ~ 8)
+Steps 1 to 3 are only for the first time.
+Next times, it will be more faster.
 
-== Step 1 : Download Android SDK ==
+Note :<br/>
+In the following documentation, screenshots are in french.<br/>
 
-There is two options here :
- # You can download a subset of SDK I made for you. It contains only the driver and the tool. It's just 4Mb => Step 1.1
- # Or you can download full SDK. It's about 150Mb. If you'r not a developper, it will not be very useful => Step 1.2
+== Step 1 : Download drivers ==
 
-=== Step 1.2 : Download full SDK ===
+The real Android SDK is near 200Mb.<br/>
+If you're not a developper, most of it will be unused.<br/>
+So I made a subset of it that is juste 2Mb and contains adb and the windows driver.
 
-As I'm writing this help, the SDK link is on http://developer.android.com/sdk/index.html and the filename is android-sdk-windows-1.5_r1.zip.<br/>
-The full link is http://developer.android.com/sdk/download.html?v=android-sdk-windows-1.5_r1.zip.
+Download it here :
+http://www.baroukh.com/proxoid/proxoid-adb.zip
+and save it on your disk.
 
-Save it 
+== Step 2 : Extract drivers ==
 
-Then, extract to your disk.
-Let say it will be located in c:\android-sdk-windows-1.5_r1.
+Right click on the file an choose "Extract all"
+Click Next then Next and Finish.
+There should be now a directory named "proxoid-adb".
 
-== Step 2 : Android's usb driver installation ==
+== Step 3 : Install drivers ==
 
-- Plug your phone.
-- Windows will ask you for the driver. Browse to c:\android-sdk-windows-1.5_r1\usb_driver\x86
+=== Step 3.1 ===
+Plug your phone now.<br/>
+Windows will work and ask you to use windows update to install drivers :<br/>
+http://www.baroukh.com/proxoid/proxoidxp-1.png
 
-To check if your phone is correctly detected :
-- launch a dos console : [Start]/[Run]/cmd.exe
-- go to sdk's tool subdirectory : 
-c:
-cd \android-sdk-windows-1.5_r1\tools
-- type
-adb.exe devices
-the output must look like
+Select the third option : "Not now" and click "Next".
+
+=== Step 3.2 ===
+
+Select second option to tell windows you will provide him the drivers.
+Then, click Next.<br/>
+http://www.baroukh.com/proxoid/proxoidxp-2.png
+
+=== Step 3.3 ===
+
+Click on browse. 
+Browse to the extracted "proxoid-adb" directory.<br/>
+Select subdirefctory "usb_drivers" then "x86".<br/>
+Click Next<br/>
+http://www.baroukh.com/proxoid/proxoidxp-3.png
+
+=== Step 3.4 ===
+
+Windows is now installing the driver<br/>
+http://www.baroukh.com/proxoid/proxoidxp-4.png
+
+=== Step 3.5 ===
+
+When installation is finish you should see something like this.
+Click "Finish"<br/>
+http://www.baroukh.com/proxoid/proxoidxp-5.png
+
+=== Step 3.6 ===
+
+Windows will ask you to reboot<br/>
+For me, itwas not necessary.<br/>
+Do here as you want...<bt/>
+http://www.baroukh.com/proxoid/proxoidxp-7.png
+
+=== Step 3.7 ===
+
+We will now verify that all works.<br/>
+Your phone should be plugged.<br/>
+Browse to proxy-adb directory and execute "check.bat".<bt/>
+You should see something like 
+{{{
 List of devices attached
 HT848GZ40121    device
+}}}
 
+The device number can be different.<br/>
+What is important is that there is something after "List of devices attached".
 
-== Step 3 : Run adb ==
-
-Now we can launch adb to forward internet traffic to the phone :
-c:
-cd \android-sdk-windows-1.5_r1\tools
-adb.exe forward tcp:8080 tcp:8080
-
-== Step 4 : Configure browser ==
-
-Your browser must now user localhost:8080 for proxy.
-
-== Step 5 : Finally run Proxoid ==
-
-On your phone, run Proxoid and touch Start.
-
-That's all. You can now start Browsing using your phone's Internet Access.
+If yes, you make the harder.<br/>
+If not, drop me a mail (mike_at_baroukh.com). I'll try to help you. If you can, provide me a screenshot.<br/>
