@@ -76,14 +76,14 @@ http://www.baroukh.com/proxoid/proxoidxp-5.png
 
 Windows will ask you to reboot<br/>
 For me, itwas not necessary.<br/>
-Do here as you want...<bt/>
+Do here as you want...<br/>
 http://www.baroukh.com/proxoid/proxoidxp-7.png
 
 === Step 3.7 ===
 
 We will now verify that all works.<br/>
 Your phone should be plugged.<br/>
-Browse to proxy-adb directory and execute "check.bat".<bt/>
+Browse to proxy-adb directory and execute "check.bat".<br/>
 You should see something like 
 {{{
 List of devices attached
@@ -95,3 +95,42 @@ What is important is that there is something after "List of devices attached".
 
 If yes, you make the harder.<br/>
 If not, drop me a mail (mike_at_baroukh.com). I'll try to help you. If you can, provide me a screenshot.<br/>
+
+== Step 4 : Configure browser ==
+
+We have to configure the proxy on your browser.
+If you already know how to do, go directly to step 5 after ahving configured your browser with proxy "localhost" on port "8080".
+
+=== If you're using Internet Explorer ===
+
+Launch your browser.<br/>
+Select menu "Tools" then "Internet Options"<br/>
+Go to "network" tab<br/>
+Click on "Network parameters"<br/>
+Check "Use a proxy server".<br/>
+Enter "localhost" for server and 8080 for port.<br/>
+
+Click Ok.<br/>
+
+http://www.baroukh.com/proxoid/proxoidxp-8.png
+
+=== If you're using Firefox ===
+
+Doc to come ...
+
+== Step 5 : Start tunnel ==
+
+Go now to directory "proxy-adb" and run script "start-tunnel".<br/>
+
+http://www.baroukh.com/proxoid/proxoidxp-6.png
+
+== Step 6 : Start Proxoid ==
+
+On your phone, run Proxoid and check "Start Proxoid".<br/>
+You should see Proxoid's icon on notification bar saying that "Proxoid is running".<br/>
+
+== Step 7 : Browse ==
+
+Here it is.<br/>
+If I'm not wrong, you actually can browse using your phone. <br/>
+Enjoy !
