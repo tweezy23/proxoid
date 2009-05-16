@@ -24,3 +24,10 @@ Select "Application" item.<br/>
 Then "Developpenent" item.<br/>
 
 Be sure that "USB debugging" checkbox is checked.
+
+
+You can now configure your computer :
+ # [installationWindowsXP Windows XP]
+ # [installationWindowsVista Windows Vista]
+ # [installationLinux Linux]
+ # [installationMaxOS MacOS]
