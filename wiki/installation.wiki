@@ -1,8 +1,13 @@
 = Installation =
 
+First, you must install on configure your phone.
+See here : [installationPhone Install and configure your phone]
 
-To install on your phone, no problem : just install from Android Market.
+Then, you have things to do on your computer.
+Use the help according to your OS :
+ # [installationWindowsXP Windows XP]
+ # [installationWindowsVista Windows Vista]
+ # [installationLinux Linux]
+ # [installationMaxOS MacOS]
 
-But to use it, your phone must be connected to your computer via usb and your computer must be correctly configured. 
-
-Configuration of your computer is detailed for [installationWindows Windows] and [installationLinux Linux] (Sorry, I have no MacOS ...)
+For any problem, don't hesitate to contact me : mike_at_baroukh.com or use Issues tab.
