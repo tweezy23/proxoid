@@ -1,0 +1,5 @@
+#summary Configure MacOS to use Proxoid
+
+Sorry but I don't have MacOS.
+
+If somebody wants to do it ...
