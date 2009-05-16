@@ -1,9 +1,29 @@
-= Installation on Windows =
+#summary How to configure windows XP to use Proxoid
 
-== Step 1 : SDK download and extraction ==
+= Installation on Windows XP =
 
-You first need to download Android's SDK.
-Go to http://developer.android.com/sdk/1.5_r1/index.html and download Window's zip (filename is android-sdk-windows-1.5_r1.zip as I'm writing this help).
+== Overview ==
+
+Your computer have to be able to cummunicate with your phone.<br/>
+For this, there is a tool provided with Android SDK : adb.<br/>
+So we'll have to download this tool, install it's driver and start it.<br>
+(Steps 1 ~ 5)
+
+Then we'll have to tell your browser to use it.<br/>
+(Steps 6 ~ 8)
+
+== Step 1 : Download Android SDK ==
+
+There is two options here :
+ # You can download a subset of SDK I made for you. It contains only the driver and the tool. It's just 4Mb => Step 1.1
+ # Or you can download full SDK. It's about 150Mb. If you'r not a developper, it will not be very useful => Step 1.2
+
+=== Step 1.2 : Download full SDK ===
+
+As I'm writing this help, the SDK link is on http://developer.android.com/sdk/index.html and the filename is android-sdk-windows-1.5_r1.zip.<br/>
+The full link is http://developer.android.com/sdk/download.html?v=android-sdk-windows-1.5_r1.zip.
+
+Save it 
 
 Then, extract to your disk.
 Let say it will be located in c:\android-sdk-windows-1.5_r1.
