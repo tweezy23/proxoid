@@ -15,6 +15,7 @@ import android.os.RemoteException;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -55,6 +56,8 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		
 		Intent svc = new Intent(this, ProxoidService.class);
 		bindService(svc, this, Context.BIND_AUTO_CREATE);
+		
+		Toast.makeText(this, "Debuging: "+Settings.System.getString(getContentResolver(), Settings.System.DEBUG_APP), Toast.LENGTH_LONG);
 	}
 	
 	
@@ -101,7 +104,6 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 	}
 	
 	private void updateLibelle(String key) {
-		System.err.println("update pour "+key);
 		if (KEY_ONOFF.equals(key)) {
 			return;
 		}

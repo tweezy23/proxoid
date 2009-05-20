@@ -48,7 +48,6 @@ public class ProxoidService extends Service {
 		return new IProxoidControl.Stub() {
 			@Override
 			public boolean update() throws RemoteException {
-				Log.d(TAG, "udpate");
 				
 				SharedPreferences sp = getSharedPreferences();
 				
@@ -60,7 +59,19 @@ public class ProxoidService extends Service {
 					doStop();
 				} else {
 					if (proxy==null) {
-						proxy = new ProxyLight();
+						proxy = new ProxyLight() {
+							@Override
+							public void debug(String message) {
+								/*if (Log.isLoggable(TAG, Log.DEBUG)) {
+									Log.d(TAG, message);
+								}*/
+								Log.e(TAG, message);
+							}
+							@Override
+							public void error(String message, Throwable t) {
+								Log.e(TAG, message, t);
+							}
+						};
 						proxy.getRequestFilters().add(new UserAgentRequestFilter());
 						proxy.setPort(port);						
 					}
