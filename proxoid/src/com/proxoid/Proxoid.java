@@ -131,10 +131,14 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		
 	}
 	
+	private boolean inflateOK = false;
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+		if (!inflateOK) {
+	        MenuInflater inflater = getMenuInflater();
+	        inflater.inflate(R.menu.menu, menu);
+	        inflateOK=true;
+		}
         return true;
     }
 	
