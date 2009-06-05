@@ -1,6 +1,16 @@
 package com.proxoid;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.net.Socket;
+
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,6 +31,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.animation.LinearInterpolator;
 import android.widget.Toast;
 
 public class Proxoid extends PreferenceActivity implements OnSharedPreferenceChangeListener, ServiceConnection {
@@ -74,8 +85,6 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 	public void onSharedPreferenceChanged(SharedPreferences pref, String key) {
 
 		if (!recurse) {
-			Log.d(TAG, "NOTIFICATION ?");
-			
 			// Notifier
 			boolean notifyOk = false;
 			try {
@@ -142,6 +151,18 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
         return true;
     }
 	
+	private String readLine(InputStream is) throws Exception {
+		StringBuilder sb = new StringBuilder();
+		char c;
+		while ( (c=(char)is.read())!='\n' && c!='\r' ) {
+			sb.append(c);
+		}
+		if (c=='\r') {
+			is.read(); // \n
+		}
+		
+		return sb.toString();
+	}
 	
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
@@ -152,6 +173,109 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 			d.setButton("Ok", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.dismiss();
+				}
+			});
+			d.show();			
+		} else
+		if (item.getItemId()==R.id.menu_download) {
+			Builder d = new AlertDialog.Builder(this);
+			d.setTitle(null);
+			d.setMessage("This will download proxoid-adb.zip and save it to your sdcard.\n(cf http://code.google.com/p/proxoid/ for more info)\nContinue ?");
+			d.setNegativeButton("No", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+				}
+			});
+			d.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+					
+					final AlertDialog d = new AlertDialog.Builder(Proxoid.this).create();
+					d.setTitle(null);
+					d.setMessage("Initialising ...");
+					d.show();
+					
+					Thread t = new Thread(new Runnable() {
+						private String message = null;
+						private boolean cancel = false;
+						public void run() {
+							if (message!=null) {
+								if (cancel) {
+									d.dismiss();
+									Toast.makeText(Proxoid.this, message, Toast.LENGTH_LONG).show();
+								} else {
+									d.setMessage(message);
+								}
+								return;
+							}
+							try {
+								message = "connecting ...";
+								Proxoid.this.runOnUiThread(this);
+
+								Socket so = new Socket("www.baroukh.com", 80);
+								InputStream is = so.getInputStream();
+								OutputStream os = so.getOutputStream();
+								
+								os.write("GET /proxoid/proxoid-adb.zip HTTP/1.0\n".getBytes());
+								os.write("Host: www.baroukh.com\n".getBytes());
+								os.write("User-agent: Proxoid\n".getBytes());
+								os.write("\n".getBytes());
+								os.flush();
+
+								String s = null;
+								String statusLine = null;
+								int contentLength = 0;
+								while ( (s=readLine(is))!=null && s.length()>0) {
+									if (statusLine==null) {
+										statusLine = s;
+										if (!s.endsWith("200 OK")) {
+											throw new Exception("Telechargement ko. Statusline="+statusLine);
+										}
+									} else {
+										if (s.startsWith("Content-Length")) {
+											contentLength=Integer.parseInt(s.substring(s.indexOf(' ')+1));
+										}
+									}
+								}
+								if (contentLength==0) {
+									throw new Exception("Telechargement ko. pas de content-length !");
+								}
+								
+								FileOutputStream fos = new FileOutputStream("/sdcard/proxoid-adb.zip");
+								byte[] b = new byte[500];
+								int nb;
+								int total = 0;
+								int pourcent = 0;
+								while ( (nb=is.read(b))>0 ) {
+									fos.write(b, 0, nb);
+									total+=nb;
+									int p = 100 * total / contentLength;
+									if (p!=pourcent) {
+										pourcent = p;
+										message = "downloading ... "+p+"%";
+										Proxoid.this.runOnUiThread(this);
+									}
+								}
+								fos.close();
+								if (total!=contentLength) {
+									Log.e(TAG, "Download problem : expected : "+contentLength+", received : "+total);
+									message = "Error : size does not match. Download may be complete (expected : "+contentLength+", received : "+total+") ...";
+									cancel=true;
+									Proxoid.this.runOnUiThread(this);
+								} else {								
+									message = "proxoid-adb.zip download complete ...";
+									cancel=true;
+									Proxoid.this.runOnUiThread(this);
+								}
+							} catch (Throwable t) {
+								Log.e(TAG, "", t);
+								message="Sorry: error while downloading ...";
+								cancel=true;
+								Proxoid.this.runOnUiThread(this);
+							}
+						}
+					});
+					t.start();
 				}
 			});
 			d.show();			
