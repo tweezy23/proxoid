@@ -1,0 +1,13 @@
+#summary Problems resolution on windows
+
+Some peoples report trouble when trying to install on windows.<br/>
+
+The trouble that occur more often is that Windows doesn't ask for any driver.<br/>
+Instead it installs automatically I a usb mass storage device<br/>
+
+Here is How to do in this case :<br>
+ * plug the phone
+ * select mount on the phone
+ * wait 20 seconds then select "turn off usb device"
+ * then go to My computer,  Right click on properties and go to hardware then device manager. 
+ * The yellow warning should be up with android phone displayed. Right click on it and select Update driver. Install the downloaded driver. (Look at [installationWindowsVista Vista installation] from step 3.2 ...)
