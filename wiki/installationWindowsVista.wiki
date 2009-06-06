@@ -55,7 +55,7 @@ In "Start" menu, right click on "Computer" and select "Properties".<br/>
 Then click on Hardware Manager.<br/>
 You should find your phone at top, with a yellow warning.<br/>
 Right click on it and select "Update driver".<br/>
-http://www.baroukh.com/proxoid/proxoidvista-1.png
+http://www.baroukh.com/proxoid/proxoidvista-2.png
 
 === Step 3.3 ===
 
