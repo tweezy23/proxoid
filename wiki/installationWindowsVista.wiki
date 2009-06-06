@@ -1,8 +1,5 @@
 #summary How to configure Windows Vista to use Proxoid
 
-**** WORK IN PROGRESS ****
-**** Hey, it's for Windows : I need to reboot ...
-
 = Installation on Windows Vista =
 
 Important: Be sure to have correctly configure your phone before<br>
@@ -48,13 +45,17 @@ Plug your phone now.<br/>
 Windows will work and ask you to use windows update to install drivers :<br/>
 http://www.baroukh.com/proxoid/proxoidvista-1.png
 
-Select the first option : "Not now" and click "Next".
+Select the second option : "ask me later".
+
+Explanation : we will not let Windows try to find the driver himself. Instead, we'll use Hardware Manager to install.
 
 === Step 3.2 ===
 
-Select second option to tell windows you will provide him the drivers.
-Then, click Next.<br/>
-http://www.baroukh.com/proxoid/proxoidxp-2.png
+In "Start" menu, right click on "Computer" and select "Properties".<br/>
+Then click on Hardware Manager.<br/>
+You should find your phone at top, with a yellow warning.<br/>
+Right click on it and select "Update driver".<br/>
+http://www.baroukh.com/proxoid/proxoidvista-1.png
 
 === Step 3.3 ===
 
@@ -62,27 +63,41 @@ Click on browse.
 Browse to the extracted "proxoid-adb" directory.<br/>
 Select subdirefctory "usb_drivers" then "x86".<br/>
 Click Next<br/>
-http://www.baroukh.com/proxoid/proxoidxp-3.png
+http://www.baroukh.com/proxoid/proxoidvista-2.png
 
 === Step 3.4 ===
 
-Windows is now installing the driver<br/>
-http://www.baroukh.com/proxoid/proxoidxp-4.png
+Select the second option : "find a driver on my computer".
+
+http://www.baroukh.com/proxoid/proxoidvista-3.png
 
 === Step 3.5 ===
 
-When installation is finish you should see something like this.
-Click "Finish"<br/>
-http://www.baroukh.com/proxoid/proxoidxp-5.png
+Browse to the extracted "proxoid-adb" directory.
+Select subdirectory "usb_drivers" then "x86".
+
+http://www.baroukh.com/proxoid/proxoidvista-4.png
 
 === Step 3.6 ===
 
-Windows will ask you to reboot<br/>
-For me, itwas not necessary.<br/>
-Do here as you want...<br/>
-http://www.baroukh.com/proxoid/proxoidxp-7.png
+Windows will show an alert.<br/>
+Don't care and select "Install anyway".
+
+http://www.baroukh.com/proxoid/proxoidvista-5.png
 
 === Step 3.7 ===
+
+Windows is now installing the driver<br/>
+When installation is finish you should see something like this.
+Click "Finish"<br/>
+http://www.baroukh.com/proxoid/proxoidvista-6.png
+
+=== Step 3.8 ===
+
+In Harware Manager, now, the phone should be referenced in "ADB Interface" with "HTC Dream Composite ADB Interface" :
+http://www.baroukh.com/proxoid/proxoidvista-7.png
+
+=== Step 3.9 ===
 
 We will now verify that all works.<br/>
 Your phone should be plugged.<br/>
