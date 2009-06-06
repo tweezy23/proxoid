@@ -1,2 +1,139 @@
-Doc is on the way. 
-In the meantime, you may use the [installationWindowsXP Windows XP doc] ...
+#summary How to configure Windows Vista to use Proxoid
+
+**** WORK IN PROGRESS ****
+**** Hey, it's for Windows : I need to reboot ...
+
+= Installation on Windows Vista =
+
+Important: Be sure to have correctly configure your phone before<br>
+See [installationPhone this page] if not.
+
+== Overview ==
+
+The steps will be :
+ # Download drivers
+ # Extract drivers
+ # Install drivers
+ # Configure browser
+ # Start tunnel
+ # Start proxoid
+ # Start browsing
+
+Steps 1 to 3 are only for the first time.
+Next times, it will be more faster.
+
+Note :<br/>
+In the following documentation, screenshots are in french.<br/>
+
+== Step 1 : Download drivers ==
+
+The real Android SDK is near 200Mb.<br/>
+If you're not a developper, most of it will be unused.<br/>
+So I made a subset of it that is juste 2Mb and contains adb and the windows driver.
+
+Download it here :
+http://www.baroukh.com/proxoid/proxoid-adb.zip
+and save it on your disk.
+
+== Step 2 : Extract drivers ==
+
+Right click on the file an choose "Extract all"
+Click Next then Next and Finish.
+There should be now a directory named "proxoid-adb".
+
+== Step 3 : Install drivers ==
+
+=== Step 3.1 ===
+Plug your phone now.<br/>
+Windows will work and ask you to use windows update to install drivers :<br/>
+http://www.baroukh.com/proxoid/proxoidvista-1.png
+
+Select the first option : "Not now" and click "Next".
+
+=== Step 3.2 ===
+
+Select second option to tell windows you will provide him the drivers.
+Then, click Next.<br/>
+http://www.baroukh.com/proxoid/proxoidxp-2.png
+
+=== Step 3.3 ===
+
+Click on browse. 
+Browse to the extracted "proxoid-adb" directory.<br/>
+Select subdirefctory "usb_drivers" then "x86".<br/>
+Click Next<br/>
+http://www.baroukh.com/proxoid/proxoidxp-3.png
+
+=== Step 3.4 ===
+
+Windows is now installing the driver<br/>
+http://www.baroukh.com/proxoid/proxoidxp-4.png
+
+=== Step 3.5 ===
+
+When installation is finish you should see something like this.
+Click "Finish"<br/>
+http://www.baroukh.com/proxoid/proxoidxp-5.png
+
+=== Step 3.6 ===
+
+Windows will ask you to reboot<br/>
+For me, itwas not necessary.<br/>
+Do here as you want...<br/>
+http://www.baroukh.com/proxoid/proxoidxp-7.png
+
+=== Step 3.7 ===
+
+We will now verify that all works.<br/>
+Your phone should be plugged.<br/>
+Browse to proxy-adb directory and execute "check.bat".<br/>
+You should see something like 
+{{{
+List of devices attached
+HT848GZ40121    device
+}}}
+
+The device number can be different.<br/>
+What is important is that there is something after "List of devices attached".
+
+If yes, you make the harder.<br/>
+If not, drop me a mail (mike_at_baroukh.com). I'll try to help you. If you can, provide me a screenshot.<br/>
+
+== Step 4 : Configure browser ==
+
+We have to configure the proxy on your browser.
+If you already know how to do, go directly to step 5 after ahving configured your browser with proxy "localhost" on port "8080".
+
+=== If you're using Internet Explorer ===
+
+Launch your browser.<br/>
+Select menu "Tools" then "Internet Options"<br/>
+Go to "network" tab<br/>
+Click on "Network parameters"<br/>
+Check "Use a proxy server".<br/>
+Enter "localhost" for server and 8080 for port.<br/>
+
+Click Ok.<br/>
+
+http://www.baroukh.com/proxoid/proxoidxp-8.png
+
+=== If you're using Firefox ===
+
+Doc to come ...
+
+== Step 5 : Start tunnel ==
+
+Go now to directory "proxy-adb" and run script "start-tunnel".<br/>
+
+http://www.baroukh.com/proxoid/proxoidxp-6.png
+
+== Step 6 : Start Proxoid ==
+
+On your phone, run Proxoid and check "Start Proxoid".<br/>
+You should see Proxoid's icon on notification bar saying that "Proxoid is running".<br/>
+
+== Step 7 : Browse ==
+
+Here it is.<br/>
+If I'm not wrong, you actually can browse using your phone. <br/>
+Enjoy !
