@@ -63,39 +63,39 @@ Click on browse.
 Browse to the extracted "proxoid-adb" directory.<br/>
 Select subdirefctory "usb_drivers" then "x86".<br/>
 Click Next<br/>
-http://www.baroukh.com/proxoid/proxoidvista-2.png
+http://www.baroukh.com/proxoid/proxoidvista-3.png
 
 === Step 3.4 ===
 
 Select the second option : "find a driver on my computer".
 
-http://www.baroukh.com/proxoid/proxoidvista-3.png
+http://www.baroukh.com/proxoid/proxoidvista-4.png
 
 === Step 3.5 ===
 
 Browse to the extracted "proxoid-adb" directory.
 Select subdirectory "usb_drivers" then "x86".
 
-http://www.baroukh.com/proxoid/proxoidvista-4.png
+http://www.baroukh.com/proxoid/proxoidvista-5.png
 
 === Step 3.6 ===
 
 Windows will show an alert.<br/>
 Don't care and select "Install anyway".
 
-http://www.baroukh.com/proxoid/proxoidvista-5.png
+http://www.baroukh.com/proxoid/proxoidvista-6.png
 
 === Step 3.7 ===
 
 Windows is now installing the driver<br/>
 When installation is finish you should see something like this.
 Click "Finish"<br/>
-http://www.baroukh.com/proxoid/proxoidvista-6.png
+http://www.baroukh.com/proxoid/proxoidvista-7.png
 
 === Step 3.8 ===
 
 In Harware Manager, now, the phone should be referenced in "ADB Interface" with "HTC Dream Composite ADB Interface" :
-http://www.baroukh.com/proxoid/proxoidvista-7.png
+http://www.baroukh.com/proxoid/proxoidvista-8.png
 
 === Step 3.9 ===
 
