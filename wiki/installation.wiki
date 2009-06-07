@@ -14,5 +14,4 @@ For any problem, don't hesitate to contact me : mike_at_baroukh.com or use Issue
 
 = Windows problems =
 
-See [problemsWindows this page] if you have trouble installing on Windows.<br/>
-(after having follow the installation page, of course ...)
+Try to follow this [http://groups.google.com/group/proxoid/browse_thread/thread/c3f91807459e2640 Google group thread]
