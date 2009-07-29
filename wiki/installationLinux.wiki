@@ -1,30 +1,68 @@
-I'l try to descirbe how to do better later, but, for now, here is a brief howto :
-
+#This page describes how to use Proxoid with Linux.
+== Step 0 : Download and install Proxoid on your phone==
+See [http://code.google.com/p/proxoid/wiki/installationPhone this page] for instructions.
 == Step 1 : Configure udev to recognize your phone ==
-
-On my computer, I have in /etc/udev/rules.da file named 11-android.rules that contains
-
-SUBSYSTEMS=="usb", SYSFS{idVendor}=="0bb4", SYSFS{idProduct}=="0c02", MODE="0666", OWNER="mike"
-SUBSYSTEMS=="usb", SYSFS{idVendor}=="0bb4", SYSFS{idProduct}=="0c01", MODE="0666", OWNER="mike"
-
-As you can see, I have two entries in this files for only one phone.
-This is because once, when I tried to use fastboot, it seems that the idProduct changed.
-
-
-== Step 2 : SDK ==
-
-Download and extract sdk from http://developer.android.com/sdk/1.5_r1/index.html
-
+First, plug in your Android phone _via_ usb. Then, create a file 
+{{{
+/etc/udev/rules.d/11-android.rules 
+}}}
+containing the two lines 
+{{{
+SUBSYSTEMS=="usb", SYSFS{idVendor}=="0bb4", SYSFS{idProduct}=="0c02", MODE="0666", OWNER="yourusername" 
+SUBSYSTEMS=="usb", SYSFS{idVendor}=="0bb4", SYSFS{idProduct}=="0c01", MODE="0666", OWNER="yourusername" 
+}}}
+Here, you have to replace yourusename by your user name. 
+As you can see, I have two entries in this files for only one phone. This is because once, when I tried to use fastboot, it seems that the idProduct changed. 
+To check the idProduct and idVendor stings by issue the command 
+{{{
+lsusb
+}}}
+Mine returns
+{{{
+...
+Bus 001 Device 005: ID 0bb4:0c02 High Tech Computer Corp.
+...
+}}}
+Then, restart udev by issuing the command 
+{{{
+sudo /etc/init.d/udev restart
+}}}
+== Step 2 : Download SDK ==
+Download the Android SDK 1.5_r1 from [http://developer.android.com/sdk/1.5_r1/index.html here]. ([http://dl.google.com/android/android-sdk-linux_x86-1.5_r1.zip Direct link]).
+Extract the file 
+{{{
+unzip android-sdk-linux_x86-1.5_r1.zip
+}}}
 == Step 3 : Tunneling ==
-
 Now, we can start tunneling betwwen your computer and your phone.
-cd to the extracted sdk dir.
-go to tools subdirectory.
-run
+Change directory to the tools subdirectory of the extracted Android SDK directory. Issue the command
+{{{
 ./adb forward tcp:8080 tcp:8080
-
+}}}
 == Step 3 : configure your browser ==
+Your browser must use the proxy server running at localhost:8080.
+=== Firefox === 
+In firefox, go to Tools->Options->Advanced->Network->Settings. Here, enter the settings shown in the image below
 
-Your browser must use localhost:8080
+http://lh4.ggpht.com/_3FwLAmI01qI/Sl79XIYBfxI/AAAAAAAAAuc/hryEM_JIDgY/s400/firefox_proxoid_proxy_settings.png
 
-Finally, run Proxoid, touch "Start" and start browsing ... 
+Finally, untick the work offline check button in the file menu.
+=== (Planned) Epiphany ===
+== Step 4 : Run proxoid on your phone ==
+Finally, run Proxoid on your Android phone, click "Start" and start browsing ... 
+== Troubleshooting ==
+To check wether the device is recogniced properly by adb, try issuing the command (from the tools dir of the android SDK)
+{{{
+./adb devices
+}}}
+This should give you output of the form
+{{{
+* daemon not running. starting it now *
+* daemon started successfully *
+List of devices attached 
+HTXXNKFXXXXX    device
+}}}
+If your devices is still not found, try to reboot (power off/power on) your computer with the phone plugged in via usb.
+
+== Advanced topics ==
+=== (Planned) SSH tunneling using proxoid ===
