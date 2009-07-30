@@ -1,4 +1,6 @@
 #This page describes how to use Proxoid with Linux.
+= Installation on Linux =
+The guide below describes how to install and use proxoid with Linux. This guide has been tested with Ubuntu 9.04.
 == Step 0 : Download and install Proxoid on your phone==
 See [http://code.google.com/p/proxoid/wiki/installationPhone this page] for instructions.
 == Step 1 : Configure udev to recognize your phone ==
@@ -50,7 +52,19 @@ Finally, untick the work offline check button in the file menu.
 === (Planned) Epiphany ===
 == Step 4 : Run proxoid on your phone ==
 Finally, run Proxoid on your Android phone, click "Start" and start browsing ... 
-== Troubleshooting ==
+= Advanced topics =
+== SSH ==
+To use SSH with proxoid, you need to download the latest version of [http://www.agroman.net/corkscrew/ corkscrew], a tool for tunneling SSH through HTTP proxies. Unpack the archive, change to the directory and compile the program
+{{{
+./configure
+make
+sudo make install
+}}}
+To use SSH through proxoid, add the following line to your ~/.ssh/config file
+{{{
+ProxyCommand /usr/local/bin/corkscrew localhost 8080 %h %p 
+}}}
+= Troubleshooting =
 To check wether the device is recogniced properly by adb, try issuing the command (from the tools dir of the android SDK)
 {{{
 ./adb devices
@@ -63,6 +77,3 @@ List of devices attached
 HTXXNKFXXXXX    device
 }}}
 If your devices is still not found, try to reboot (power off/power on) your computer with the phone plugged in via usb.
-
-== Advanced topics ==
-=== (Planned) SSH tunneling using proxoid ===
