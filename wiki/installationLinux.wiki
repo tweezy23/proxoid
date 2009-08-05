@@ -53,7 +53,24 @@ Finally, untick the work offline check button in the file menu.
 == Step 4 : Run proxoid on your phone ==
 Finally, run Proxoid on your Android phone, click "Start" and start browsing ... 
 = Advanced topics =
-== SSH ==
+== Using Proxoid system-wide (Gnome only so far, Untested) ==
+Start network preferences by running
+{{{
+gnome-network-preferences
+}}}
+Click *Manual Proxy Configuration* and check *Use the same proxy for all protocols*. Then fill out
+   * HTTP Proxy: 
+     localhost Port: 8080
+Finally, click the button *Apply System-wide*.
+== Configure Evolution (Untested) ==
+To use Evolution with Proxoid, go to Edit->Preferences->Network Preferences. Fill out the fields
+   * HTTP Proxy: 
+     localhost Port: 8080
+   * Secure HTTP Proxy: 
+     localhost Port: 8080
+   * SOCKS Proxy: 
+     localhost Port: 8080
+== Configure SSH ==
 To use SSH with proxoid, you need to download the latest version of [http://www.agroman.net/corkscrew/ corkscrew], a tool for tunneling SSH through HTTP proxies. Unpack the archive, change to the directory and compile the program
 {{{
 ./configure
