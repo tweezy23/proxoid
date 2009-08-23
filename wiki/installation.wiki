@@ -16,6 +16,8 @@ For any problem, don't hesitate to contact me : mike_at_baroukh.com or use Issue
 
 Try to follow this [http://groups.google.com/group/proxoid/browse_thread/thread/c3f91807459e2640 Google group thread]
 
+Also, if windows doesn't ask you for any driver, uninstall the currently used with USBDeview : http://www.nirsoft.net/utils/usb_devices_view.html.
+
 = Samsung Galaxy =
 
 Two conditions are needed to make it work with Samsung Galaxy :
