@@ -15,3 +15,10 @@ For any problem, don't hesitate to contact me : mike_at_baroukh.com or use Issue
 = Windows problems =
 
 Try to follow this [http://groups.google.com/group/proxoid/browse_thread/thread/c3f91807459e2640 Google group thread]
+
+= Samsung Galaxy =
+
+Two conditions are needed to make it work with Samsung Galaxy :
+ # Install, prior to the driver, the Samsung PC Suite. Without it, the driver wouldn't work.
+ # The driver need to be taken from v1.5r3 of Google's sdk. I updated proxy-adb.zip to use this one.
+In case you already installed the driver without Samsung PC Suite, unistall it before. For this, you may use USBDeview : http://www.nirsoft.net/utils/usb_devices_view.html
