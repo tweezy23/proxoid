@@ -2,8 +2,11 @@
 
 = Installation on Windows Vista =
 
-Important: Be sure to have correctly configure your phone before<br>
+Important 1 : Be sure to have correctly configure your phone before<br>
 See [installationPhone this page] if not.
+
+Important 2 : Il you have a Samsung Galaxy, Install Samsung PC Suite now before continuing.
+
 
 == Overview ==
 
