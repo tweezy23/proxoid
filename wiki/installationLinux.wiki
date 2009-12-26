@@ -58,6 +58,10 @@ Start network preferences by running
 {{{
 gnome-network-preferences
 }}}
+or
+{{{
+gnome-network-properties
+}}}
 Click *Manual Proxy Configuration* and check *Use the same proxy for all protocols*. Then fill out
    * HTTP Proxy: 
      localhost Port: 8080
@@ -81,8 +85,12 @@ To use SSH through proxoid, add the following line to your ~/.ssh/config file
 {{{
 ProxyCommand /usr/local/bin/corkscrew localhost 8080 %h %p 
 }}}
+If you keep beeing logged out from the server, add the following line to the /etc/ssh/ssh_config file
+{{{
+ServerAliveInterval = 2
+}}}
 = Troubleshooting =
-To check wether the device is recogniced properly by adb, try issuing the command (from the tools dir of the android SDK)
+To check whether the device is recogniced properly by adb, try issuing the command (from the tools dir of the android SDK)
 {{{
 ./adb devices
 }}}
