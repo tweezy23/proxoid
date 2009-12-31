@@ -24,3 +24,7 @@ Two conditions are needed to make it work with Samsung Galaxy :
  # Install, prior to the driver, the Samsung PC Suite. Without it, the driver wouldn't work.
  # The driver need to be taken from v1.5r3 of Google's sdk. I updated proxy-adb.zip to use this one.
 In case you already installed the driver without Samsung PC Suite, unistall it before. For this, you may use USBDeview : http://www.nirsoft.net/utils/usb_devices_view.html
+
+= Motorola Droid/Milestone =
+
+Check [installationDroid this Page]
