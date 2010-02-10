@@ -113,7 +113,7 @@ public class ProxoidService extends Service {
 						PendingIntent contentIntent = PendingIntent.getActivity(ProxoidService.this, 0, notificationIntent, 0);
 				
 						notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
-						notification.flags |= Notification.FLAG_NO_CLEAR;
+						notification.flags |= Notification.FLAG_ONGOING_EVENT;
 				
 						mNotificationManager.notify(ID, notification);
 				
