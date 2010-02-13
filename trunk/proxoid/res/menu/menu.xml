@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 	
-	<item android:id="@+id/menu_help" android:title="Help" android:icon="@drawable/android:ic_menu_help"/>
-	<item android:id="@+id/menu_download" android:title="Download proxy-adb.zip" android:icon="@drawable/android:ic_menu_save"/>
+	<item android:id="@+id/menu_help" android:title="@string/help" android:icon="@drawable/android:ic_menu_help"/>
+	<item android:id="@+id/menu_download" android:title="@string/downloadadb" android:icon="@drawable/android:ic_menu_save"/>
 		
 </menu>

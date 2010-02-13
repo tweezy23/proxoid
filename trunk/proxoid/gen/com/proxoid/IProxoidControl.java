@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /raid/mike/documents/eclipse/cardiweb/Proxoid/src/com/proxoid/IProxoidControl.aidl
+ * Original file: /home/mike/documents/eclipse/android/proxoid/src/com/proxoid/IProxoidControl.aidl
  */
 package com.proxoid;
 import java.lang.String;
@@ -41,7 +41,7 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proxoid</string>
+    <string name="help">Aide</string>
+    <string name="help_msg">Rendez vous sur \nhttp://code.google.com/p/proxoid/\n...</string>
+    
+    <string name="downloadadb">Télécharger adb.zip</string>
+    <string name="downloadadbmsg">Proxoid va télécharger proxoid-adb.zip et le mettre sur la sdcard.\n(cf http://code.google.com/p/proxoid/ pour plus d\'infos)\nContinuer ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    
+	<string name="adb_init">Initialisation ...</string>
+	<string name="adb_connect">Connection ...</string>
+	<string name="adb_download">Téléchargement ... </string>
+	<string name="adb_ok">Téléchargement terminé ...</string>
+	<string name="adb_error">Désolé : Erreur lors du téléchargement.</string>
+    
+    <string name="current_useragent">Filtre de User-Agent. Valeur actuelle : </string>
+    <string name="current_port">Port d\'écoute. Valeur actuelle : </string>
+    
+    <string name="title_useragent">Filtre User-Agent</string>
+	<string name="title_onoff">Démarrer/Arrêter Proxoid</string>
+	
+	<string name="onoff_on">Proxoid est arrêté. Touchez pour le démarrer.</string>
+	<string name="onoff_off">Proxoid est démarré. Touchez pour l\'arrêter.</string>
+	
+	<string name="service_restarted">Proxoid redémarré</string>
+	<string name="service_started">Proxoid started</string>
+	<string name="service_stopped">Proxoid stopped</string>
+	<string name="service_running">Proxoid is running</string>
+	<string name="service_text">Proxoid is running. Select to access admin panel.</string>
+	
+    <string-array name="useragent_keys">
+                <item>asis</item>
+                <item>replace</item>
+                <item>remove</item>
+    </string-array>
+	<string-array name="useragent_values">
+                <item>Ne pas modifier</item>
+                <item>Remplacer par un faux</item>
+                <item>Supprimer</item>
+     </string-array>     
+    <string-array name="proxy_keys">
+                <item>none</item>
+                <item>apn</item>
+    </string-array>
+	<string-array name="proxy_values">
+                <item>Aucun</item>
+                <item>Celui défini pour l'opérateur en cours</item>
+     </string-array> 
+</resources>

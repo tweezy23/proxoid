@@ -43,6 +43,7 @@ public class ProxoidService extends Service {
 		return super.getSharedPreferences(Proxoid.KEY_PREFS, MODE_PRIVATE);
 	} 
 	
+	
 	@Override
 	public IBinder onBind(Intent binder) {
 		return new IProxoidControl.Stub() {
@@ -88,7 +89,7 @@ public class ProxoidService extends Service {
 							proxy=null;
 							return false;
 						}
-						Toast.makeText(ProxoidService.this, "Proxoid restarted", Toast.LENGTH_SHORT).show();
+						Toast.makeText(ProxoidService.this, getResources().getString(R.string.service_restarted), Toast.LENGTH_SHORT).show();
 					}
 					
 					if (!proxy.isRunning()) {
@@ -104,7 +105,7 @@ public class ProxoidService extends Service {
 						
 						NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 						int icon = R.drawable.icon;
-						Notification notification = new Notification(icon, "Proxoid is running", System.currentTimeMillis());
+						Notification notification = new Notification(icon, getResources().getString(R.string.service_running), System.currentTimeMillis());
 				
 						Context context = getApplicationContext();
 						CharSequence contentTitle = "Proxoid";
@@ -117,7 +118,7 @@ public class ProxoidService extends Service {
 				
 						mNotificationManager.notify(ID, notification);
 				
-						Toast.makeText(ProxoidService.this, "Proxoid started", Toast.LENGTH_SHORT).show();
+						Toast.makeText(ProxoidService.this, getResources().getString(R.string.service_started), Toast.LENGTH_SHORT).show();
 					}
 				}
 				
@@ -145,7 +146,7 @@ public class ProxoidService extends Service {
 			proxy.stop();
 			NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 			mNotificationManager.cancel(ID);
-			Toast.makeText(this, "Proxoid stopped", Toast.LENGTH_SHORT).show();	
+			Toast.makeText(this, getResources().getString(R.string.service_stopped), Toast.LENGTH_SHORT).show();	
 			// Mettre a jour la conf
 			SharedPreferences sp = getSharedPreferences();
 			Editor e = sp.edit();

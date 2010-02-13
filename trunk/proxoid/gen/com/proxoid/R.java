@@ -23,6 +23,7 @@ public final class R {
         public static final int bt_reset=0x7f080003;
         public static final int bt_start=0x7f080006;
         public static final int bt_stop=0x7f080005;
+        public static final int menu_download=0x7f080008;
         public static final int menu_help=0x7f080007;
         public static final int tab_prefs=0x7f080001;
         public static final int tab_startstop=0x7f080004;
@@ -36,8 +37,29 @@ public final class R {
         public static final int menu=0x7f070000;
     }
     public static final class string {
-        public static final int app_name=0x7f050001;
-        public static final int hello=0x7f050000;
+        public static final int adb_connect=0x7f050008;
+        public static final int adb_download=0x7f050009;
+        public static final int adb_error=0x7f05000b;
+        public static final int adb_init=0x7f050007;
+        public static final int adb_ok=0x7f05000a;
+        public static final int app_name=0x7f050000;
+        public static final int current_port=0x7f05000d;
+        public static final int current_useragent=0x7f05000c;
+        public static final int downloadadb=0x7f050003;
+        public static final int downloadadbmsg=0x7f050004;
+        public static final int help=0x7f050001;
+        public static final int help_msg=0x7f050002;
+        public static final int no=0x7f050006;
+        public static final int onoff_off=0x7f050011;
+        public static final int onoff_on=0x7f050010;
+        public static final int service_restarted=0x7f050012;
+        public static final int service_running=0x7f050015;
+        public static final int service_started=0x7f050013;
+        public static final int service_stopped=0x7f050014;
+        public static final int service_text=0x7f050016;
+        public static final int title_onoff=0x7f05000f;
+        public static final int title_useragent=0x7f05000e;
+        public static final int yes=0x7f050005;
     }
     public static final class xml {
         public static final int prefs=0x7f040000;
