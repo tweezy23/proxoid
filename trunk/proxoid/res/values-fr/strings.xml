@@ -25,10 +25,10 @@
 	<string name="onoff_off">Proxoid est démarré. Touchez pour l\'arrêter.</string>
 	
 	<string name="service_restarted">Proxoid redémarré</string>
-	<string name="service_started">Proxoid started</string>
-	<string name="service_stopped">Proxoid stopped</string>
-	<string name="service_running">Proxoid is running</string>
-	<string name="service_text">Proxoid is running. Select to access admin panel.</string>
+	<string name="service_started">Prooxoid est démarré</string>
+	<string name="service_stopped">Proxoid est arrété</string>
+	<string name="service_running">Proxoid est démarré</string>
+	<string name="service_text">Proxoid est démarré. Touchez pour accèder à l'administration.</string>
 	
     <string-array name="useragent_keys">
                 <item>asis</item>
