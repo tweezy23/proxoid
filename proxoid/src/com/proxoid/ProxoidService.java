@@ -109,7 +109,7 @@ public class ProxoidService extends Service {
 				
 						Context context = getApplicationContext();
 						CharSequence contentTitle = "Proxoid";
-						CharSequence contentText = "Proxoid is running. Select to access admin panel.";
+						CharSequence contentText = getResources().getString(R.string.service_text);
 						Intent notificationIntent = new Intent(ProxoidService.this, Proxoid.class);
 						PendingIntent contentIntent = PendingIntent.getActivity(ProxoidService.this, 0, notificationIntent, 0);
 				
