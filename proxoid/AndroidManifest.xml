@@ -2,13 +2,23 @@
 <manifest 
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.proxoid"
-	android:versionCode="7" android:versionName="1.0.6">
+	android:versionCode="6" 
+	android:versionName="1.0.6"
+>
       
-    <uses-sdk android:minSdkVersion="1"/>
-      
+    <uses-sdk 
+    	android:minSdkVersion="1"
+    />
+    <supports-screens 
+    	android:smallScreens="true" 
+		android:normalScreens="true" 
+		android:largeScreens="true" 
+		android:anyDensity="true"
+    />
+     
     <uses-permission android:name="android.permission.INTERNET" />
       
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
         <activity android:name=".Proxoid" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

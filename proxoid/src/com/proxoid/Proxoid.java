@@ -68,7 +68,7 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		Intent svc = new Intent(this, ProxoidService.class);
 		bindService(svc, this, Context.BIND_AUTO_CREATE);
 		
-		Toast.makeText(this, "Debuging: "+Settings.System.getString(getContentResolver(), Settings.System.DEBUG_APP), Toast.LENGTH_LONG);
+		//Toast.makeText(this, "Debuging: "+Settings.System.getString(getContentResolver(), Settings.System.DEBUG_APP), Toast.LENGTH_LONG);
 	}
 	
 	
@@ -119,13 +119,13 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		String summary = null;
 		String value = getSharedPreferences().getString(key, null);
 		if (KEY_PORT.equals(key)) {
-			summary = "Listening port. Current value : "+(value==null?"8080":value);
+			summary = getResources().getString(R.string.current_port)+(value==null?"8080":value);
 		} else
 		if (KEY_USERAGENT.equals(key)) {
-			summary = "User-Agent filtering. Current value : "+
-			(	USERAGENT_ASIS.equals(value)?"No filtering":
-				USERAGENT_REMOVE.equals(value)?"Remove":
-				"Replace with dummy"
+			summary = getResources().getString(R.string.current_useragent)+
+			(	USERAGENT_ASIS.equals(value)?getResources().getStringArray(R.array.useragent_values)[0]:
+				USERAGENT_REMOVE.equals(value)?getResources().getStringArray(R.array.useragent_values)[2]:
+				getResources().getStringArray(R.array.useragent_values)[1]
 			);
 		}
 		if (summary!=null) {
@@ -169,7 +169,7 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		if (item.getItemId()==R.id.menu_help) {
 			AlertDialog d = new AlertDialog.Builder(this).create();
 			d.setTitle(null);
-			d.setMessage("Please, go to\nhttp://code.google.com/p/proxoid/\nfrom your computer.");
+			d.setMessage(getResources().getString(R.string.help_msg));
 			d.setButton("Ok", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.dismiss();
@@ -180,19 +180,19 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		if (item.getItemId()==R.id.menu_download) {
 			Builder d = new AlertDialog.Builder(this);
 			d.setTitle(null);
-			d.setMessage("This will download proxoid-adb.zip and save it to your sdcard.\n(cf http://code.google.com/p/proxoid/ for more info)\nContinue ?");
-			d.setNegativeButton("No", new DialogInterface.OnClickListener() {
+			d.setMessage(getResources().getString(R.string.downloadadbmsg));
+			d.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.dismiss();
 				}
 			});
-			d.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+			d.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.dismiss();
 					
 					final AlertDialog d = new AlertDialog.Builder(Proxoid.this).create();
 					d.setTitle(null);
-					d.setMessage("Initialising ...");
+					d.setMessage(getResources().getString(R.string.adb_init));
 					d.show();
 					
 					Thread t = new Thread(new Runnable() {
@@ -209,7 +209,7 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 								return;
 							}
 							try {
-								message = "connecting ...";
+								message = getResources().getString(R.string.adb_connect);
 								Proxoid.this.runOnUiThread(this);
 
 								Socket so = new Socket("www.baroukh.com", 80);
@@ -252,7 +252,7 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 									int p = 100 * total / contentLength;
 									if (p!=pourcent) {
 										pourcent = p;
-										message = "downloading ... "+p+"%";
+										message = getResources().getString(R.string.adb_download)+p+"%";
 										Proxoid.this.runOnUiThread(this);
 									}
 								}
@@ -263,13 +263,13 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 									cancel=true;
 									Proxoid.this.runOnUiThread(this);
 								} else {								
-									message = "proxoid-adb.zip download complete ...";
+									message = "proxoid-adb.zip : "+getResources().getString(R.string.adb_ok);
 									cancel=true;
 									Proxoid.this.runOnUiThread(this);
 								}
 							} catch (Throwable t) {
 								Log.e(TAG, "", t);
-								message="Sorry: error while downloading ...";
+								message=getResources().getString(R.string.adb_error);
 								cancel=true;
 								Proxoid.this.runOnUiThread(this);
 							}

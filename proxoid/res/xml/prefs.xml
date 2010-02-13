@@ -2,10 +2,10 @@
 	
 	<CheckBoxPreference 
 		android:key="onoff" 
-		android:summaryOff="Proxy currently off. Select to switch on." 
-		android:summaryOn="Proxy currently on. Select to switch off." 
+		android:summaryOff="@string/onoff_on" 
+		android:summaryOn="@string/onoff_off" 
 		android:order="1" 
-		android:title="Start/Stop Proxoid" 
+		android:title="@string/title_onoff" 
 		android:defaultValue="false"
 	/>  
 	<EditTextPreference
@@ -19,7 +19,7 @@
 	<ListPreference 
 		android:key="useragent" 
 		android:order="3" 
-		android:title="User-Agent filter"
+		android:title="@string/title_useragent"
 		android:entries="@array/useragent_values"
 		android:entryValues="@array/useragent_keys"
 	android:defaultValue="replace"/>

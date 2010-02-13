@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Proxoid</string>
     <string name="app_name">Proxoid</string>
+    <string name="help">Help</string>
+    <string name="help_msg">Please, go to\nhttp://code.google.com/p/proxoid/\nfrom your computer.</string>
+    
+    <string name="downloadadb">Download adb.zip</string>
+    <string name="downloadadbmsg">This will download proxoid-adb.zip and save it to your sdcard.\n(cf http://code.google.com/p/proxoid/ for more info)\nContinue ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+	<string name="adb_init">Initialising ...</string>
+	<string name="adb_connect">Connecting ...</string>
+	<string name="adb_download">Downloading ... </string>
+	<string name="adb_ok">Download complete ...</string>
+	<string name="adb_error">Sorry : Error while downloading.</string>
+    
+    <string name="current_useragent">User-Agent filter. Current value : </string>
+    <string name="current_port">Listening port. Current value : </string>
+
+	<string name="title_useragent">User-Agent Filter</string>
+	<string name="title_onoff">Start/Stop Proxoid</string>
+
+	<string name="onoff_on">Proxy currently off. Select to switch on</string>
+	<string name="onoff_off">Proxy currently on. Select to switch off</string>
+
+	<string name="service_restarted">Proxoid re-started</string>
+	<string name="service_started">Proxoid started</string>
+	<string name="service_stopped">Proxoid stopped</string>
+	<string name="service_running">Proxoid is running</string>
+	<string name="service_text">Proxoid is running. Select to access admin panel.</string>
+	    
     <string-array name="useragent_keys">
                 <item>asis</item>
                 <item>replace</item>
