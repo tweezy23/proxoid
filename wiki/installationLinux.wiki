@@ -6,16 +6,17 @@ See [http://code.google.com/p/proxoid/wiki/installationPhone this page] for inst
 == Step 1 : Configure udev to recognize your phone ==
 First, plug in your Android phone _via_ usb. Then, create a file 
 {{{
-/etc/udev/rules.d/11-android.rules 
+/etc/udev/rules.d/09-android.rules 
 }}}
 containing the two lines 
 {{{
-SUBSYSTEMS=="usb", SYSFS{idVendor}=="0bb4", SYSFS{idProduct}=="0c02", MODE="0666", OWNER="yourusername" 
-SUBSYSTEMS=="usb", SYSFS{idVendor}=="0bb4", SYSFS{idProduct}=="0c01", MODE="0666", OWNER="yourusername" 
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", MODE="0666", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"
+SUBSYSTEM=="usb", SYSFS{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+SUBSYSTEM=="usb", SYSFS{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
 }}}
-Here, you have to replace yourusename by your user name. 
-As you can see, I have two entries in this files for only one phone. This is because once, when I tried to use fastboot, it seems that the idProduct changed. 
-To check the idProduct and idVendor stings by issue the command 
+Be sure to place yourself in "plugdev" group.
+Those lines works for all phone I tested : HTCs (G1, Tatoo, Nexus One), Motorola Milestone and Samsung Galaxy (I7500).
 {{{
 lsusb
 }}}
