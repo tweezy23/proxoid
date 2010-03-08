@@ -30,10 +30,10 @@ Then, restart udev by issuing the command
 sudo /etc/init.d/udev restart
 }}}
 == Step 2 : Download SDK ==
-Download the Android SDK 1.5_r1 from [http://developer.android.com/sdk/1.5_r1/index.html here]. ([http://dl.google.com/android/android-sdk-linux_x86-1.5_r1.zip Direct link]).
+Download the Android SDK 1.5_r1 from [http://developer.android.com/intl/fr/sdk/index.html here].
 Extract the file 
 {{{
-unzip android-sdk-linux_x86-1.5_r1.zip
+unzip <downloadfile.zip>
 }}}
 == Step 3 : Tunneling ==
 Now, we can start tunneling betwwen your computer and your phone.
