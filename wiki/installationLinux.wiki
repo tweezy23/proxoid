@@ -30,7 +30,7 @@ Then, restart udev by issuing the command
 sudo /etc/init.d/udev restart
 }}}
 == Step 2 : Download SDK ==
-Download the Android SDK 1.5_r1 from [http://developer.android.com/intl/fr/sdk/index.html here].
+Download the Android SDK from [http://developer.android.com/intl/fr/sdk/index.html here].
 Extract the file 
 {{{
 unzip <downloadfile.zip>
