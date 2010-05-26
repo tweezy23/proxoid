@@ -2,8 +2,8 @@
 <manifest 
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.proxoid"
-	android:versionCode="7" 
-	android:versionName="1.0.7"
+	android:versionCode="8" 
+	android:versionName="1.0.8"
 >
       
     <uses-sdk 
@@ -18,7 +18,7 @@
      
     <uses-permission android:name="android.permission.INTERNET" />
       
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true" android:installLocation="auto">
         <activity android:name=".Proxoid" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +26,10 @@
             </intent-filter>
         </activity>
         <service android:name=".ProxoidService"/>
+        
+        <!-- The application's publisher ID assigned by AdMob -->
+		<meta-data android:value="a14a4d226a81c03" android:name="ADMOB_PUBLISHER_ID"/>
+        
     </application>
     
 </manifest> 

@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Proxoid</string>
     <string name="help">Help</string>
-    <string name="help_msg">Please, go to\nhttp://code.google.com/p/proxoid/\nfrom your computer.</string>
+    <string name="help_msg">Not always easy to install on windows, but try \nhttp://code.google.com/p/proxoid/\nas a start point.</string>
     
     <string name="downloadadb">Download adb.zip</string>
     <string name="downloadadbmsg">This will download proxoid-adb.zip and save it to your sdcard.\n(cf http://code.google.com/p/proxoid/ for more info)\nContinue ?</string>
@@ -34,11 +34,13 @@
                 <item>asis</item>
                 <item>replace</item>
                 <item>remove</item>
+                <item>random</item>
     </string-array>
 	<string-array name="useragent_values">
-                <item>Don't change</item>
+                <item>Don\'t change</item>
                 <item>Replace with dummy</item>
                 <item>Remove</item>
+                <item>Random</item>
      </string-array>     
     <string-array name="proxy_keys">
                 <item>none</item>

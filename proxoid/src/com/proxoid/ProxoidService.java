@@ -25,6 +25,8 @@ public class ProxoidService extends Service {
 	private ProxyLight proxy = null;
 	private String useragent = null;
 	
+	private String randomUserAgent = Long.toString(System.currentTimeMillis(), 20);
+	
 	private class UserAgentRequestFilter implements RequestFilter {
 		@Override
 		public boolean filter(Request request) {
@@ -33,6 +35,9 @@ public class ProxoidService extends Service {
 			} else
 			if (Proxoid.USERAGENT_REMOVE.equals(useragent)) {
 				request.getHeaders().remove("User-Agent");
+			} else
+			if (Proxoid.USERAGENT_RANDOM.equals(useragent)) {
+				request.getHeaders().put("User-Agent", randomUserAgent);
 			}
 			
 			return false;
