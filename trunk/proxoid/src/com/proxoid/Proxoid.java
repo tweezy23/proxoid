@@ -1,12 +1,8 @@
 package com.proxoid;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.Reader;
 import java.net.Socket;
 
 import android.app.AlertDialog;
@@ -25,14 +21,14 @@ import android.os.RemoteException;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.animation.LinearInterpolator;
 import android.widget.Toast;
+
+import com.admob.android.ads.AdManager;
 
 public class Proxoid extends PreferenceActivity implements OnSharedPreferenceChangeListener, ServiceConnection {
 
@@ -47,6 +43,7 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 	protected static final String USERAGENT_ASIS	= "asis";
 	protected static final String USERAGENT_REPLACE	= "replace";
 	protected static final String USERAGENT_REMOVE	= "remove";
+	protected static final String USERAGENT_RANDOM	= "random";
 	
 	protected static final String COMMAND_STOP = "stop";
 	protected static final String COMMAND_START = "start";
@@ -69,6 +66,18 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		bindService(svc, this, Context.BIND_AUTO_CREATE);
 		
 		//Toast.makeText(this, "Debuging: "+Settings.System.getString(getContentResolver(), Settings.System.DEBUG_APP), Toast.LENGTH_LONG);
+		
+		AdManager.setTestDevices( new String[] {
+			AdManager.TEST_EMULATOR,
+			"0F1E2FAF0C820A199575431267508B16",
+			} 
+		);
+
+	}
+	
+	@Override
+	public void setContentView(int layoutResID) {
+		super.setContentView(R.layout.main);
 	}
 	
 	

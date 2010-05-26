@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Proxoid</string>
     <string name="help">Aide</string>
-    <string name="help_msg">Rendez vous sur \nhttp://code.google.com/p/proxoid/\n...</string>
+    <string name="help_msg">Pas toujours évident à installer sous windows, mais essayez \nhttp://code.google.com/p/proxoid/\npour commencer ...</string>
     
     <string name="downloadadb">Télécharger adb.zip</string>
     <string name="downloadadbmsg">Proxoid va télécharger proxoid-adb.zip et le mettre sur la sdcard.\n(cf http://code.google.com/p/proxoid/ pour plus d\'infos)\nContinuer ?</string>
@@ -28,17 +28,19 @@
 	<string name="service_started">Prooxoid est démarré</string>
 	<string name="service_stopped">Proxoid est arrété</string>
 	<string name="service_running">Proxoid est démarré</string>
-	<string name="service_text">Proxoid est démarré. Touchez pour accèder à l'administration.</string>
+	<string name="service_text">Proxoid est démarré. Touchez pour accèder à l\'administration.</string>
 	
     <string-array name="useragent_keys">
                 <item>asis</item>
                 <item>replace</item>
                 <item>remove</item>
+                <item>random</item>
     </string-array>
 	<string-array name="useragent_values">
                 <item>Ne pas modifier</item>
                 <item>Remplacer par un faux</item>
                 <item>Supprimer</item>
+                <item>Aléatoire</item>
      </string-array>     
     <string-array name="proxy_keys">
                 <item>none</item>
@@ -46,6 +48,6 @@
     </string-array>
 	<string-array name="proxy_values">
                 <item>Aucun</item>
-                <item>Celui défini pour l'opérateur en cours</item>
+                <item>Celui défini pour l\'opérateur en cours</item>
      </string-array> 
 </resources>
