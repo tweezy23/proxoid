@@ -67,11 +67,11 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		
 		//Toast.makeText(this, "Debuging: "+Settings.System.getString(getContentResolver(), Settings.System.DEBUG_APP), Toast.LENGTH_LONG);
 		
-		AdManager.setTestDevices( new String[] {
-			AdManager.TEST_EMULATOR,
-			"0F1E2FAF0C820A199575431267508B16",
-			} 
-		);
+//		AdManager.setTestDevices( new String[] {
+//			AdManager.TEST_EMULATOR,
+//			"0F1E2FAF0C820A199575431267508B16",
+//			} 
+//		);
 
 	}
 	

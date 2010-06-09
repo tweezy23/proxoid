@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proxoid</string>
+    <string name="help">說明</string>
+    <string name="help_msg">並不是總是能很容易的在Windows下安裝，但是請嘗試\nhttp://code.google.com/p/proxoid/\n作為一個起點。</string>
+    
+    <string name="downloadadb">下載 adb.zip</string>
+    <string name="downloadadbmsg">這將會下載 proxoid-adb.zip 然後儲存到您的SD卡上。\n(存取http://code.google.com/p/proxoid/ 獲取更多訊息)\n繼續？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+	<string name="adb_init">初始化中 ...</string>
+	<string name="adb_connect">連接中 ...</string>
+	<string name="adb_download">下載中 ... </string>
+	<string name="adb_ok">下載完成 ...</string>
+	<string name="adb_error">抱歉：下載中錯誤。</string>
+    
+    <string name="current_useragent">使用者代理過濾器。目前值：</string>
+    <string name="current_port">監聽通訊埠。目前值：</string>
+
+	<string name="title_useragent">使用者代理過濾器</string>
+	<string name="title_onoff">開啟/停止 Proxoid</string>
+
+	<string name="onoff_on">Proxy 目前是關閉的。選取切換為開啟</string>
+	<string name="onoff_off">Proxy 目前是開啟的。選取切換為關閉</string>
+
+	<string name="service_restarted">Proxoid 已重啟</string>
+	<string name="service_started">Proxoid 已啟動</string>
+	<string name="service_stopped">Proxoid 已停止</string>
+	<string name="service_running">Proxoid 執行中</string>
+	<string name="service_text">Proxoid 正在執行。選取進入管理面板。</string>
+	    
+    <string-array name="useragent_keys">
+                <item>asis</item>
+                <item>替換</item>
+                <item>移除</item>
+                <item>隨機</item>
+    </string-array>
+	<string-array name="useragent_values">
+                <item>不變更</item>
+                <item>使用空文字替換</item>
+                <item>移除</item>
+                <item>隨機</item>
+     </string-array>     
+    <string-array name="proxy_keys">
+                <item>無</item>
+                <item>APN</item>
+    </string-array>
+	<string-array name="proxy_values">
+                <item>無</item>
+                <item>使用APN設定</item>
+     </string-array> 
+</resources>
