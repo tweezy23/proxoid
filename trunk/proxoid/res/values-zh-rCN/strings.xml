@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proxoid</string>
+    <string name="help">帮助</string>
+    <string name="help_msg">并不是总是能很容易的在Windows下安装，但是请尝试\nhttp://code.google.com/p/proxoid/\n作为一个起点。</string>
+    
+    <string name="downloadadb">下载 adb.zip</string>
+    <string name="downloadadbmsg">这将会下载 proxoid-adb.zip 然后保存到您的SD卡上。\n(访问http://code.google.com/p/proxoid/ 获取更多信息)\n继续？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+	<string name="adb_init">初始化中 ...</string>
+	<string name="adb_connect">连接中 ...</string>
+	<string name="adb_download">下载中 ... </string>
+	<string name="adb_ok">下载完成 ...</string>
+	<string name="adb_error">抱歉：下载中出错。</string>
+    
+    <string name="current_useragent">用户代理过滤器。当前值：</string>
+    <string name="current_port">监听端口。当前值：</string>
+
+	<string name="title_useragent">用户代理过滤器</string>
+	<string name="title_onoff">开启/停止 Proxoid</string>
+
+	<string name="onoff_on">Proxy 目前是关闭的。选择切换为开启</string>
+	<string name="onoff_off">Proxy 目前是开启的。选择切换为关闭</string>
+
+	<string name="service_restarted">Proxoid 已重启</string>
+	<string name="service_started">Proxoid 已启动</string>
+	<string name="service_stopped">Proxoid 已停止</string>
+	<string name="service_running">Proxoid 运行中</string>
+	<string name="service_text">Proxoid 正在运行。选择进入管理面板。</string>
+	    
+    <string-array name="useragent_keys">
+                <item>asis</item>
+                <item>替换</item>
+                <item>移除</item>
+                <item>随机</item>
+    </string-array>
+	<string-array name="useragent_values">
+                <item>不更改</item>
+                <item>使用空文本替换</item>
+                <item>移除</item>
+                <item>随机</item>
+     </string-array>     
+    <string-array name="proxy_keys">
+                <item>无</item>
+                <item>APN</item>
+    </string-array>
+	<string-array name="proxy_values">
+                <item>无</item>
+                <item>使用APN设置</item>
+     </string-array> 
+</resources>
