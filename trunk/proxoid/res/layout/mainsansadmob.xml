@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:admob="http://schemas.android.com/apk/res/com.proxoid"
+	
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+>
+	<ListView 
+		android:id="@android:id/list"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:drawSelectorOnTop="false"
+	    android:scrollbarAlwaysDrawVerticalTrack="true"
+    />
+
+</LinearLayout>
