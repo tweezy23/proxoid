@@ -18,6 +18,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.os.Build.VERSION;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
@@ -66,18 +67,25 @@ public class Proxoid extends PreferenceActivity implements OnSharedPreferenceCha
 		bindService(svc, this, Context.BIND_AUTO_CREATE);
 		
 		//Toast.makeText(this, "Debuging: "+Settings.System.getString(getContentResolver(), Settings.System.DEBUG_APP), Toast.LENGTH_LONG);
+
 		
-//		AdManager.setTestDevices( new String[] {
-//			AdManager.TEST_EMULATOR,
-//			"0F1E2FAF0C820A199575431267508B16",
-//			} 
-//		);
+		if (!VERSION.SDK.equals("2") && !VERSION.SDK.equals("1") ) {
+			AdManager.setTestDevices( new String[] {
+				AdManager.TEST_EMULATOR,
+				"0F1E2FAF0C820A199575431267508B16",
+				} 
+			);
+		}
 
 	}
 	
 	@Override
 	public void setContentView(int layoutResID) {
-		super.setContentView(R.layout.main);
+		int layout = R.layout.main;
+		if (VERSION.SDK.equals("2") || VERSION.SDK.equals("1") ) {
+			layout=R.layout.mainsansadmob;
+		}
+		super.setContentView(layout);
 	}
 	
 	
