@@ -1,0 +1,1 @@
+I removed this page and changed it for a [google-group thread](http://groups.google.com/group/proxoid/browse_thread/thread/c3f91807459e2640)
